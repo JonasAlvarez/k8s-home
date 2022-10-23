@@ -1,0 +1,21 @@
+include ../common.mk
+include ../env.$(ENVIRONMENT).mk
+
+APPNAME = plex
+VAULT_PATH = /home/kube-data/$(APPNAME)
+
+.PHONY: deploy
+deploy:
+	(kubectl -n $(ENVIRONMENT)-$(APPNAME) get secrets wildcard.sysadm.org || \
+		kubectl create secret --namespace $(ENVIRONMENT)-$(APPNAME) \
+        		tls wildcard.sysadm.org \
+        		--key $(CERT_KEY) --cert $(CERT_CRT) ) && \
+	kubectl -n $(ENVIRONMENT)-$(APPNAME) apply -f $(VAULT_PATH)/$(APPNAME)-secret.yaml && \
+	kubectl -n $(ENVIRONMENT)-$(APPNAME) apply -f .
+
+.PHONY: uninstall
+uninstall:
+	kubectl -n $(ENVIRONMENT)-$(APPNAME) delete -f . || true; \
+	kubectl -n $(ENVIRONMENT)-$(APPNAME) delete -f $(VAULT_PATH)/$(APPNAME)-secret.yaml && \
+	kubectl -n $(ENVIRONMENT)-$(APPNAME) delete deployment,daemonsets,svc,pod,secrets --all || true ; \
+	exit 0
