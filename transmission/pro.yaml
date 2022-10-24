@@ -134,24 +134,24 @@ spec:
                 secretKeyRef:
                   name: transmission-secret
                   key: PASS
-            - name: HOST_WHITELIST
-              value: dnsname list
+            #- name: HOST_WHITELIST
+            #  value: dnsname list
             - name: PEERPORT
-              value: peerport
+              value: "51413"
             - name: PGID
               value: "1000"
             - name: PUID
               value: "1000"
-            - name: TRANSMISSION_WEB_HOME
-              value: /
-              #value: /combustion-release/
+            #- name: TRANSMISSION_WEB_HOME
+            #  value: /combustion-release/
             - name: TZ
               value: Europe/Madrid
-            - name: USER
-              value: username
-            - name: WHITELIST
-              value: iplist
-          image: lscr.io/linuxserver/transmission:latest
+            #- name: USER
+            #  value: jonas
+            #- name: WHITELIST
+            #  value: 192.168.1.2
+          #image: lscr.io/linuxserver/transmission:latest
+          image: linuxserver/transmission
           #image: haugene/transmission-openvpn:2.12
           name: transmission
           ports:
@@ -227,6 +227,8 @@ status:
 
 ---
 
+# http://transmission.sysadm.org/transmission/web/
+#
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
