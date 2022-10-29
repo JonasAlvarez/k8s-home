@@ -6,13 +6,12 @@ KUBE_CONTEXT ?= default
 #AZURE_KEY_VAULT_NAME ?= my-infra
 
 # Applications to deploy, order is important
-# pending review limit-ranges, see original
+# jellyfin replaces plex, that I not longer have runnig
+# mysql disabled, I use the mysql for wordpress only, in this moment
 APPS = \
 	namespaces \
 	pihole \
 	transmission \
-	mysql \
-	plex \
 	web-static \
 	kubernetes-dashboard \
 	jellyfin \
@@ -21,10 +20,8 @@ APPS = \
 APPS_UNINSTALL = \
 	web-static \
 	jellyfin \
-	plex \
 	kubernetes-dashboard \
 	homer \
-	mysql \
 	transmission \
 	pihole \
 	namespaces
