@@ -56,3 +56,10 @@ metadata:
   name: pro-transmission
 
 ---
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: pro-jellyfin
+
+---

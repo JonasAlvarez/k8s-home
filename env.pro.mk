@@ -15,10 +15,12 @@ APPS = \
 	plex \
 	web-static \
 	kubernetes-dashboard \
+	jellyfin \
 	homer
 
 APPS_UNINSTALL = \
 	web-static \
+	jellyfin \
 	plex \
 	kubernetes-dashboard \
 	homer \
