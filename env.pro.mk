@@ -10,22 +10,26 @@ KUBE_CONTEXT ?= default
 # mysql disabled, I use the mysql for wordpress only, in this moment
 APPS = \
 	namespaces \
+	homer \
 	pihole \
-	transmission \
 	web-static \
-	kubernetes-dashboard \
+	transmission \
 	jellyfin \
 	wireguard \
-	homer
+	kubernetes-dashboard \
+	common \
+
 
 APPS_UNINSTALL = \
-	web-static \
+	common \
+	kubernetes-dashboard \
 	wireguard \
 	jellyfin \
-	kubernetes-dashboard \
-	homer \
 	transmission \
+	web-static \
 	pihole \
-	namespaces
+	homer \
+	namespaces \
+
 
 export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
