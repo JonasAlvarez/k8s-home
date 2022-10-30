@@ -63,3 +63,10 @@ metadata:
   name: pro-jellyfin
 
 ---
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: pro-wireguard
+
+---

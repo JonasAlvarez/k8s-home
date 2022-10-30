@@ -15,10 +15,12 @@ APPS = \
 	web-static \
 	kubernetes-dashboard \
 	jellyfin \
+	wireguard \
 	homer
 
 APPS_UNINSTALL = \
 	web-static \
+	wireguard \
 	jellyfin \
 	kubernetes-dashboard \
 	homer \

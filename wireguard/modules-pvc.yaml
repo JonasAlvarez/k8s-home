@@ -1,0 +1,18 @@
+---
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: wireguard-modules-pvc
+spec:
+  selector:
+    matchLabels:
+      volume: wireguard-modules-pv
+  storageClassName: manual
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 100Mi
+
+---

@@ -1,0 +1,7 @@
+resources:
+  - config-pv.yaml
+  - modules-pv.yaml
+  - config-pvc.yaml
+  - modules-pvc.yaml
+  - deployment.yaml
+  - service.yaml
