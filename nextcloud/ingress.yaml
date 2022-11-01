@@ -1,0 +1,26 @@
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nextcloud.sysadm.org
+spec:
+
+  tls:
+  - hosts:
+    - nextcloud.sysadm.org
+    secretName: wildcard.sysadm.org
+
+  rules:
+  - host: nextcloud.sysadm.org
+    http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: nextcloud
+            port:
+              number: 8080
+
+---

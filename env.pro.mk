@@ -16,6 +16,7 @@ APPS = \
 	transmission \
 	jellyfin \
 	wireguard \
+	nextcloud \
 	kubernetes-dashboard \
 	common \
 
@@ -23,6 +24,7 @@ APPS = \
 APPS_UNINSTALL = \
 	common \
 	kubernetes-dashboard \
+	nextcloud \
 	wireguard \
 	jellyfin \
 	transmission \
