@@ -15,9 +15,16 @@ You need a few things to install it:
 - Provide the secret files.
 - Execute `make deploy-all`, and you will be done!
 
-And the mini PC is still alive and working:
 
-![All the running kubelets](/_assets/images/kubelets.png)
+## Two screenshots
 
-![The IOS with transmission working](/_assets/images/storage-ios.png)
+And the mini PC alive and working:
+
+-  here we see the running pods and containers in the lonely kubelet:
+
+   ![All the running kubelets](/_assets/images/kubelets.png)
+
+- And the IOS when downloading some big file with transmission:
+
+   ![The IOS with transmission working](/_assets/images/storage-ios.png)
 
