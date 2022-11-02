@@ -13,4 +13,11 @@ directory.
 You need a few things to install it:
 - A kubernetes cluster
 - Provide the secret files.
-- Execute make, and you will be done!
+- Execute `make deploy-all`, and you will be done!
+
+And the mini PC is still alive and working:
+
+![All the running kubelets](/_assets/images/kubelets.png)
+
+![The IOS with transmission working](/_assets/images/storage-ios.png)
+
