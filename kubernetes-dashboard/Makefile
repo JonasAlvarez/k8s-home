@@ -6,6 +6,9 @@ VAULT_PATH = /home/kube-data/$(APPNAME)
 
 .PHONY: deploy
 deploy:
+	(kubectl -n $(APPNAME) get secrets wildcard.sysadm.org || \
+		kubectl create secret --namespace $(APPNAME) \
+        		tls wildcard.sysadm.org --key $(CERT_KEY) --cert $(CERT_CRT) ) && \
 	(kubectl -n $(APPNAME) get secrets kubernetes-dashboard-certs || \
 		kubectl -n $(APPNAME) create secret generic kubernetes-dashboard-certs \
 			--from-file=$(VAULT_PATH)/certs ) && \
