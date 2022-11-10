@@ -18,11 +18,11 @@ deploy:
 .PHONY: uninstall
 uninstall:
 	@echo "*******************" $@ $(APPNAME) "*******************" start
-	./1-metrics-events-configmap-del.sh $(NAMESPACE) || \
-	./2-metrics-events-statefulset-del.sh $(NAMESPACE) || \
-	helm uninstall ksm -n $(NAMESPACE) || \
-	./4-logs-configmap-del.sh $(NAMESPACE) || \
-	./5-logs-daemonset-del.sh $(NAMESPACE) || \
+	./1-metrics-events-configmap-del.sh $(NAMESPACE) || true
+	./2-metrics-events-statefulset-del.sh $(NAMESPACE) || true
+	helm uninstall ksm -n $(NAMESPACE) || true
+	./4-logs-configmap-del.sh $(NAMESPACE) || true
+	./5-logs-daemonset-del.sh $(NAMESPACE) || true
 	exit 0
 	@echo "*******************" $@ $(APPNAME) "*******************" end
 
