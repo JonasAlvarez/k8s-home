@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: desktop
+  name: desktop
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: desktop
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: desktop
+    spec:
+      containers:
+        - env:
+            - name: KEYBOARD
+              value: es-es-qwerty
+            - name: PGID
+              value: "1000"
+            - name: PUID
+              value: "1000"
+            - name: SUBFOLDER
+              value: /
+            - name: TITLE
+              value: desktop@sysadm.org
+            - name: TZ
+              value: Europe/Madrid
+          image: lscr.io/linuxserver/webtop:ubuntu-mate
+          name: desktop
+          ports:
+            - containerPort: 3000
+          volumeMounts:
+            - mountPath: /config
+              name: desktop-config-pvc
+            #- mountPath: /var/run/docker.sock
+            #  name: desktop-claim1
+      restartPolicy: Always
+      volumes:
+        - name: desktop-config-pvc
+          persistentVolumeClaim:
+            claimName: desktop-config-pvc
+        #- name: desktop-claim1
+        #  persistentVolumeClaim:
+        #    claimName: desktop-claim1

@@ -84,3 +84,10 @@ metadata:
   name: pro-logs
 
 ---
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: pro-desktop
+
+---

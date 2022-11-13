@@ -1,0 +1,20 @@
+---
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: desktop-config-pv
+  labels:
+    volume: desktop-config-pv
+    app: desktop
+    type: local
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 100Mi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/home/kube-data/desktop/config"
+
+---
