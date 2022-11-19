@@ -21,6 +21,6 @@ spec:
           service:
             name: pihole
             port:
-              number: PPPPPP
+              number: 80
 
 ---

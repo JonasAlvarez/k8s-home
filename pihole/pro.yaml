@@ -62,6 +62,21 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
+  name: pihole
+spec:
+  ports:
+  - port: 80
+    targetPort: 80
+    name: port80
+    protocol: TCP
+  selector:
+    app: pihole
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
   name: pihole-tcp
   namespace: pro-pihole
   annotations:
@@ -71,14 +86,14 @@ spec:
   externalTrafficPolicy: Local
   loadBalancerIP: 192.168.1.2
   ports:
-  - port: 5380
-    targetPort: 80
-    name: port80
-    protocol: TCP
-  - port: 53443
-    targetPort: 443
-    name: port443
-    protocol: TCP
+  #- port: 5380
+  #  targetPort: 80
+  #  name: port80
+  #  protocol: TCP
+  #- port: 53443
+  #  targetPort: 443
+  #  name: port443
+  #  protocol: TCP
   - port: 53
     targetPort: 53
     protocol: TCP
