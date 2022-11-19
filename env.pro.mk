@@ -18,11 +18,11 @@ APPS = \
 	wireguard \
 	nextcloud \
 	kubernetes-dashboard \
-	common \
+	traefik-dashboard \
 
 
 APPS_UNINSTALL = \
-	common \
+	traefik-dashboard \
 	kubernetes-dashboard \
 	nextcloud \
 	wireguard \
