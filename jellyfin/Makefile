@@ -17,6 +17,6 @@ deploy:
 uninstall:
 	 @echo "*******************" $@ $(APPNAME) "*******************" start
 	kubectl -n $(ENVIRONMENT)-$(APPNAME) delete -k ./ || true; \
-	kubectl -n $(ENVIRONMENT)-$(APPNAME) delete deployment,daemonsets,svc,pod,secrets --all || true ; \
+	kubectl -n $(ENVIRONMENT)-$(APPNAME) delete secrets --all || true ; \
 	exit 0
 	@echo "*******************" $@ $(APPNAME) "*******************" end

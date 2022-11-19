@@ -1,0 +1,4 @@
+resources:
+  - pro.yaml
+  - pihole-secret.yaml
+  #- ingress.yaml

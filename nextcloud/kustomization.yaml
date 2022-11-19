@@ -2,7 +2,7 @@ resources:
   - pv.yaml
   - pvc.yaml
   - configmap.yaml
-  - secret.yaml
+  - nextcloud-secret.yaml
   - service.yaml
   - deployment.yaml
   - ingress.yaml
